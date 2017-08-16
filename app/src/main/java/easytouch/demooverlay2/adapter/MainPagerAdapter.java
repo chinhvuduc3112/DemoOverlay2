@@ -14,7 +14,7 @@ import easytouch.demooverlay2.R;
 
 public class MainPagerAdapter extends PagerAdapter {
     private Context mContext;
-    String[] titles = {"Eins", "Zwei", "Drei"};
+    String[] titles = {"Eins", "Zwei"};
     int[] layouts = {R.layout.fragment_view1, R.layout.fragment_view2};
 
     public MainPagerAdapter(Context mContext) {

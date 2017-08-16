@@ -22,30 +22,34 @@ public class View1Fragment extends RelativeLayout {
     Button btn_nut1;
     public View1Fragment(Context context) {
         super(context);
-        initialize();
+
     }
 
     public View1Fragment(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initialize();
+
     }
 
     public View1Fragment(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initialize();
+
     }
 
-    private void initialize() {
-        ViewGroup viewGroup = (ViewGroup) inflate(getContext(), R.layout.fragment_view1, this);
-        view1Layout = (ViewGroup) viewGroup.getChildAt(0);
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        initView();
+    }
 
-        btn_nut1 = view1Layout.findViewById(R.id.btn_nut1);
+    private void initView(){
 
+        btn_nut1 = findViewById(R.id.btn_nut1);
         btn_nut1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.e("chinh", "chinh da bam nut");
             }
         });
+
     }
 }
