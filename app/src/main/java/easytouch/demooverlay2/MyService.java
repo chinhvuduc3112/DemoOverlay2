@@ -14,11 +14,14 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import easytouch.demooverlay2.adapter.CustomPagerAdapter;
+import easytouch.demooverlay2.adapter.MainPagerAdapter;
 
 /**
  * Created by VuDuc on 8/14/2017.
@@ -29,7 +32,8 @@ public class MyService extends Service {
     WindowManager.LayoutParams params;
     WindowManager.LayoutParams bottomParams;
     SlidingUpPanelLayout slidingUpPanelLayout;
-    ViewPager mViewPager;
+    ViewPager mViewPager = null;
+    MainPagerAdapter mainPagerAdapter = null;
 
     Context mContext;
     private WindowManager windowManager;
@@ -126,7 +130,9 @@ public class MyService extends Service {
         });
 
         mViewPager = view.findViewById(R.id.controlViewPager);
-        mViewPager.setAdapter(new CustomPagerAdapter(this));
+        mViewPager.setAdapter(new MainPagerAdapter(this));
+
+
     }
 
     @Override

@@ -22,6 +22,7 @@ public class View1Fragment extends RelativeLayout {
     Button btn_nut1;
     public View1Fragment(Context context) {
         super(context);
+        initialize();
     }
 
     public View1Fragment(Context context, AttributeSet attrs) {
@@ -31,6 +32,7 @@ public class View1Fragment extends RelativeLayout {
 
     public View1Fragment(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initialize();
     }
 
     private void initialize() {
