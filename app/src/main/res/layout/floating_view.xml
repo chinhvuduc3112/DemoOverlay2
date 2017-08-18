@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:visibility="gone">
 
-    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+    <easytouch.slidinguplibrary.SlidingUpPanelLayout
         android:id="@+id/sliding_layout"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:sothree="http://schemas.android.com/tools"
@@ -28,29 +28,29 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="match_parent"
             android:gravity="center|bottom"
             android:padding="10dp">
 
             <!-- here comes your sliding up panel layout-->
             <!--<TextView-->
-                <!--android:id="@+id/tv_selected_date"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="300dp"-->
-                <!--android:background="#841818"-->
-                <!--android:gravity="center|top"-->
-                <!--android:text="Sliding Up Panel"-->
-                <!--android:textSize="16sp" />-->
+            <!--android:id="@+id/tv_selected_date"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="300dp"-->
+            <!--android:background="#841818"-->
+            <!--android:gravity="center|top"-->
+            <!--android:text="Sliding Up Panel"-->
+            <!--android:textSize="16sp" />-->
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/controlViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="400dp"
                 android:padding="10dp">
 
             </android.support.v4.view.ViewPager>
         </LinearLayout>
 
-    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+    </easytouch.slidinguplibrary.SlidingUpPanelLayout>
 
 </LinearLayout>

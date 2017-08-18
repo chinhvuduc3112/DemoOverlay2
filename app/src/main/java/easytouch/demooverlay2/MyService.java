@@ -18,10 +18,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import easytouch.demooverlay2.adapter.CustomPagerAdapter;
 import easytouch.demooverlay2.adapter.MainPagerAdapter;
+import easytouch.slidinguplibrary.SlidingUpPanelLayout;
 
 /**
  * Created by VuDuc on 8/14/2017.
@@ -108,6 +108,7 @@ public class MyService extends Service {
 
     private void addControls(View view) {
         slidingUpPanelLayout = (SlidingUpPanelLayout) view.findViewById(R.id.sliding_layout);
+        slidingUpPanelLayout.setPanelHeight(1);
         slidingUpPanelLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
@@ -119,7 +120,7 @@ public class MyService extends Service {
                 if(newState.name().toString().equalsIgnoreCase("Collapsed")){
                     //action when collapsed
 //                    slidingUpPanelLayout.getLayoutParams().height=200;
-                    slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                    //slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
 //                    windowManager.updateViewLayout(overlayView, params);
                     overlayView.setVisibility(View.GONE);
                     overlayBottom.setVisibility(View.VISIBLE);
