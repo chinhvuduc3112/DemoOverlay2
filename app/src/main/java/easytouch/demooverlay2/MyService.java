@@ -9,6 +9,7 @@ import android.support.annotation.IntDef;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -18,6 +19,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import easytouch.demooverlay2.adapter.CustomPagerAdapter;
 import easytouch.demooverlay2.adapter.MainPagerAdapter;
@@ -33,7 +37,6 @@ public class MyService extends Service {
     WindowManager.LayoutParams bottomParams;
     SlidingUpPanelLayout slidingUpPanelLayout;
     ViewPager mViewPager = null;
-    MainPagerAdapter mainPagerAdapter = null;
 
     Context mContext;
     private WindowManager windowManager;
@@ -46,6 +49,12 @@ public class MyService extends Service {
         mContext = this;
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         addOverlayView();
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
     }
 
     private void addOverlayView() {
@@ -132,8 +141,6 @@ public class MyService extends Service {
 
         mViewPager = view.findViewById(R.id.controlViewPager);
         mViewPager.setAdapter(new MainPagerAdapter(this));
-
-
     }
 
     @Override

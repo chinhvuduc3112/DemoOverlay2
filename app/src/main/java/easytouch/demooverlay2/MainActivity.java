@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mActivity = this;
-        //Khai báo xử lý exception
-        Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler(mActivity));
-
-        if(getIntent().getBooleanExtra("crash", false)){
-            Toast.makeText(this, "Ung dung duoc khoi dong lai", Toast.LENGTH_LONG).show();
-        }
+//        //Khai báo xử lý exception
+//        Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler(mActivity));
+//
+//        if(getIntent().getBooleanExtra("crash", false)){
+//            Toast.makeText(this, "Ung dung duoc khoi dong lai", Toast.LENGTH_LONG).show();
+//        }
 
         startService=(Button)findViewById(R.id.startService);
         stopService=(Button)findViewById(R.id.stopService);
